@@ -69,4 +69,4 @@ Passing static checks does not mean that every biological analysis has been reru
 
 No software license has been assigned yet. Until a license is added, the code remains subject to the default copyright rules; public visibility does not itself grant permission to redistribute or reuse it. Please contact the corresponding author regarding reuse.
 
-Please cite the associated manuscript when using these workflows. The formal citation metadata will be added when the final bibliographic details and author list are confirmed.
+Please cite this software repository using the metadata in [CITATION.cff](CITATION.cff). The software citation follows the author order supplied for the associated manuscript. Chong Wang and Bo Zhang contributed equally; Min Tao and Jing Luo are co-corresponding authors. The manuscript's formal preferred-citation record (title, journal, year and DOI) will be added when those bibliographic details are finalized.

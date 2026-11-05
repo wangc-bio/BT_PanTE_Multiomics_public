@@ -1,0 +1,45 @@
+cff-version: 1.2.0
+message: "If you use these workflows in your research, please cite this software repository."
+title: "Pan-TE catalogue and multi-omics analysis workflows"
+type: software
+repository-code: "https://github.com/wangc-bio/BT_PanTE_Multiomics_public"
+abstract: >-
+  Reusable computational workflows for constructing a transposable-element
+  catalogue and analysing TE genomic occupancy, transcription, DNA methylation,
+  chromatin accessibility, and cross-assay multi-omics associations in a
+  diploid intergeneric hybrid fish system.
+keywords:
+  - transposable elements
+  - Pan-TE
+  - multi-omics
+  - hybridization
+  - fish genomics
+authors:
+  - family-names: Wang
+    given-names: Chong
+  - family-names: Zhang
+    given-names: Bo
+  - family-names: Wei
+    given-names: Tingchu
+  - family-names: Gu
+    given-names: Xuedie
+  - family-names: Luo
+    given-names: Yuxiang
+  - family-names: Lin
+    given-names: Guoliang
+  - family-names: Zhang
+    given-names: Chun
+  - family-names: Zhou
+    given-names: Yi
+  - family-names: Li
+    given-names: Yan
+  - family-names: Zhang
+    given-names: Yaping
+  - family-names: Liu
+    given-names: Shaojun
+  - family-names: Liu
+    given-names: Qizhi
+  - family-names: Tao
+    given-names: Min
+  - family-names: Luo
+    given-names: Jing

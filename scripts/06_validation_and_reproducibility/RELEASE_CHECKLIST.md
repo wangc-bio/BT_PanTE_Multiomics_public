@@ -30,7 +30,8 @@
 ## Release metadata
 
 - [ ] Confirm the manuscript title, author list and citation details.
-- [ ] Add a citation file after the bibliographic information is verified.
+- [x] Add CITATION.cff for the software repository using the confirmed manuscript author order.
+- [ ] Add the manuscript's preferred-citation metadata after its final title, journal, publication year and DOI are confirmed.
 - [ ] Select and add a software license only after confirming ownership and third-party redistribution terms.
 - [ ] Add only verified sequence-archive accessions and dataset DOIs.
 - [ ] Tag the exact commit whose validation artifact and checksum manifest have been retained.

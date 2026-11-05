@@ -7,6 +7,7 @@ Module 06 defines the source-release checks used before publishing this reposito
 - `validate_release.py`: checks required documentation, raw/oversized files, local environment files, recognized personal absolute paths, Python syntax, Bash/Slurm syntax and R syntax when Rscript is available.
 - `generate_sha256_manifest.py`: generates a SHA-256 manifest for the repository snapshot.
 - `software_versions.tsv`: records software versions and indicates where a version was not established.
+- Root-level `CITATION.cff`: provides the software citation and confirmed author order; it does not yet encode an unconfirmed manuscript title or DOI.
 - `RELEASE_CHECKLIST.md`: records the checks required before a tagged release.
 
 ## Run locally
