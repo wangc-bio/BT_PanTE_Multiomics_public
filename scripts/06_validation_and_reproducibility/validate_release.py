@@ -87,7 +87,7 @@ def main():
         failures += 1
     else:
         add(rows, "required_documentation", "PASS",
-            "All six module READMEs and core documentation are present.")
+            "All module READMEs (01–06, including 04A and 04B) and core documentation are present.")
 
     private_hits = []
     secret_hits = []

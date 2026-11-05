@@ -1,6 +1,6 @@
 # Analysis workflow
 
-This document summarizes the six computational modules and the evidence each module is intended to produce. The repository contains source workflows and parameter documentation; it does not bundle the raw sequencing data or all intermediate analysis outputs.
+This document summarizes the six numbered computational modules (01–06), with Module 04 divided into 04A and 04B, and the evidence each module is intended to produce. The repository contains source workflows and parameter documentation; it does not bundle the raw sequencing data or all intermediate analysis outputs.
 
 ## Module 01 — Genome and sample quality control
 

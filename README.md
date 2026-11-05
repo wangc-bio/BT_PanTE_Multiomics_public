@@ -2,7 +2,7 @@
 
 This repository contains the computational workflows and supporting methods for constructing a transposable-element (TE) catalogue and analysing TE genomic occupancy, transcription, DNA methylation and chromatin accessibility in a diploid intergeneric hybrid fish system.
 
-The repository is organized as six analysis modules. It is intended to document the methods and provide reusable, parameterized scripts; it is not a data repository and does not contain raw sequencing reads, genome assemblies or large intermediate matrices.
+The repository is organized into six numbered modules (01–06), with Module 04 divided into 04A and 04B. It is intended to document the methods and provide reusable, parameterized scripts; it is not a data repository and does not contain raw sequencing reads, genome assemblies or large intermediate matrices.
 
 ## Study scope
 

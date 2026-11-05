@@ -2,7 +2,7 @@
 
 ## Repository contents
 
-- [ ] Include the six module directories, core method documentation and reusable source scripts.
+- [ ] Include all numbered module directories (01–06; Module 04A and 04B), core method documentation and reusable source scripts.
 - [ ] Exclude raw sequencing reads, genome assemblies, BAM/CRAM files and large intermediate matrices.
 - [ ] Exclude private sample-level QC records, individual sample identifiers and internal evidence bundles.
 - [ ] Confirm that every distributed file is owned by the project or has permission for redistribution.
