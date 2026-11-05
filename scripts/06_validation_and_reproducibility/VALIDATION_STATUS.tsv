@@ -1,0 +1,8 @@
+Module	Validation_scope	Static_or_synthetic_status	Data_dependent_rerun	Limitations
+01	Read mapping summaries, assembly statistics and Merqury workflows	PASS_STATIC_CI	NOT_PERFORMED	Raw reads, alignments and assemblies are external inputs.
+02	Whole-genome alignment, synteny, phylogenetic, k-mer and depth-validation scripts	PASS_STATIC_CI	NOT_PERFORMED	Requires original assemblies, reads, gene annotations and external phylogenetic inputs.
+03	TE discovery, evidence integration, unified library, Pan-TE clustering and occupancy	PASS_STATIC_CI; SYNTHETIC_TEST	NOT_PERFORMED	Synthetic test covers classification code paths only; production inputs are external.
+04A	RepeatMasker Kimura-divergence parsing and landscape analyses	PASS_STATIC_CI	NOT_PERFORMED	Requires RepeatMasker alignments and assembly-size inputs.
+04B	RNA-seq, WGBS and ATAC-seq processing and Pan-TE quantification	PASS_STATIC_CI	NOT_PERFORMED	Sample manifests and assay input files are not distributed.
+05	Cross-assay integration and Methods 2.11–2.12 statistical modelling	PASS_STATIC_CI	NOT_PERFORMED	Large multi-omics matrices and analysis environments are external.
+06	Repository validation, software-version records and SHA-256 manifest generation	PASS_STATIC_CI	NOT_APPLICABLE	The final-commit GitHub Actions artifact is the authoritative per-release validation record.

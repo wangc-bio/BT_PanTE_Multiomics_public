@@ -1,0 +1,5 @@
+role	sample_id
+parent_A	genome_parent_A
+parent_B	genome_parent_B
+f1_haplotype_A	genome_F1_A
+f1_haplotype_B	genome_F1_B

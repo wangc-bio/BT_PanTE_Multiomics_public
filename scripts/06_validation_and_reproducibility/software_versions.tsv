@@ -1,0 +1,45 @@
+Module	Software	Version	Version_status	Evidence
+01	fastp	0.23.2	recorded	01_genome_and_sample_qc/methods/software_versions.tsv
+01	PacBio HiFi QC	NA	not_established	01_genome_and_sample_qc/methods/software_versions.tsv
+01	Iso-Seq QC	NA	not_established	01_genome_and_sample_qc/methods/software_versions.tsv
+02	MUMmer	4.0.0rc1	recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	Jellyfish	2.3.1	recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	Bowtie	1.3.1	recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	RAxML	8.2.8	recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	MUSCLE	v3	recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	JCVI/MCscan	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	OrthoFinder	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	Gblocks	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	ProtTest	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	SeqKit	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+02	MMseqs2	not_recorded	not_recorded	scripts/02_phased_F1_assembly_and_parental_origin/README.md
+03	RepeatModeler2	2.0.5	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	TEtrimmer	1.7.2	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	MCHelper	1.7.0	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	LTR_FINDER_parallel	1.2	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	LTR_FINDER	1.0.7	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	GenomeTools	1.6.2	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	LTR_retriever	3.0.1	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	HelitronScanner	1.1	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	TEsorter	1.5.1	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	BLAST+	2.15.0+	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	RepeatMasker	4.1.8	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	RMBlast	2.11.0+	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	RepBase	31.07	recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+03	MITE-Hunter	not_recorded	not_recorded	scripts/03_pan_TE_catalogue/SOURCE_SCRIPT_INVENTORY.md
+04A	RepeatMasker	4.1.8	recorded	scripts/04A_TE_insertion_inheritance_and_genomic_divergence/README.md
+04A	Unified TE library	v5.2	recorded	scripts/04A_TE_insertion_inheritance_and_genomic_divergence/README.md
+04B	fastp	0.23.2	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	STAR	2.7.10b	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	TEcount/TEtranscripts	2.2.4	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	DESeq2	1.46.0	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	Bismark	0.24.2	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	Bowtie2	2.3.5.1	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	BWA-MEM	0.7.17-r1188	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+04B	Picard	2.25.5	recorded	scripts/04B_TE_transcription_and_epigenomic_profiling/README.md
+05	Python	3.x	minimum_only	scripts/05_integrated_statistical_modelling/README.md
+05	NumPy	not_recorded	not_recorded	scripts/05_integrated_statistical_modelling/README.md
+05	pandas	not_recorded	not_recorded	scripts/05_integrated_statistical_modelling/README.md
+05	SciPy	not_recorded	not_recorded	scripts/05_integrated_statistical_modelling/README.md
+05	statsmodels	not_recorded	not_recorded	scripts/05_integrated_statistical_modelling/README.md
+05	Matplotlib	not_recorded	not_recorded	scripts/05_integrated_statistical_modelling/README.md

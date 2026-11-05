@@ -1,0 +1,5 @@
+# Parent-specific k-mer analysis
+
+Jellyfish 2.3.1 is used to count canonical k-mers in the parental reference assemblies (k=31 and k=21). For the chromosome/window ancestry analysis, the 31-mer dump is filtered to copy numbers 1–5 in each parent; parent-specific sets are obtained by set difference. Parent-specific k-mers are mapped to the BT assembly with Bowtie 1.3.1 using zero mismatches and unique-hit reporting (`-v 0 -a -m 1 --best --strata`). BED intervals are counted in 1-Mb windows using bedtools. Windows with fewer than 50 total hits are classified as indistinct; a parental fraction of at least 0.70 is used for strong BSB- or TC-source calls. A 5-Mb window analysis is used as a robustness assessment with the same minimum-hit and source-fraction thresholds.
+
+The uploaded 1-Mb script contains the full source-calling implementation. The 5-Mb validation script reuses the mapped BED files and applies the 5-Mb window definition. Software versions and parameters should be retained as recorded above; bedtools and samtools versions are to be reported from the actual execution environment.

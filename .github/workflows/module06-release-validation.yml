@@ -1,0 +1,43 @@
+name: Module 06 public-release validation
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  static-release-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.11"
+      - name: Install R parser
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq r-base-core
+      - name: Run repository validation
+        run: |
+          python scripts/06_validation_and_reproducibility/validate_release.py --repo-root . --output /tmp/release_validation_report.tsv
+      - name: Generate repository SHA-256 manifest
+        if: always()
+        run: |
+          python scripts/06_validation_and_reproducibility/generate_sha256_manifest.py --repo-root . --output /tmp/release_checksums.tsv
+      - name: Upload validation report and checksums
+        if: always()
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: public-release-validation
+          path: |
+            /tmp/release_validation_report.tsv
+            /tmp/release_checksums.tsv
+          if-no-files-found: error
+          retention-days: 90

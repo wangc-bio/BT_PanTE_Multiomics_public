@@ -1,0 +1,39 @@
+name: Module 03 classification release tests
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/03_pan_TE_catalogue/evidence_integration/**"
+      - "scripts/03_pan_TE_catalogue/tests/**"
+      - ".github/workflows/module03-classification-tests.yml"
+  pull_request:
+    paths:
+      - "scripts/03_pan_TE_catalogue/evidence_integration/**"
+      - "scripts/03_pan_TE_catalogue/tests/**"
+      - ".github/workflows/module03-classification-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  classification-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+      - name: Set up Python
+        uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.11"
+      - name: Compile Module 03 classification scripts
+        run: |
+          python -m py_compile \
+            scripts/03_pan_TE_catalogue/evidence_integration/03_build_evidence_master.py \
+            scripts/03_pan_TE_catalogue/evidence_integration/04_final_arbitration.py \
+            scripts/03_pan_TE_catalogue/evidence_integration/05_operational_arbitration.py \
+            scripts/03_pan_TE_catalogue/evidence_integration/06_relaxed_repbase_rescue_v5_1.py \
+            scripts/03_pan_TE_catalogue/evidence_integration/07_relaxed_homology_rescue_v5_2.py
+      - name: Run synthetic end-to-end classification test
+        run: python scripts/03_pan_TE_catalogue/tests/test_classification_release.py
