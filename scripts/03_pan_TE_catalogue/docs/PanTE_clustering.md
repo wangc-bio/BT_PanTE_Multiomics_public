@@ -4,7 +4,9 @@ This document covers the consensus-sequence clustering component of Methods 2.6.
 
 ## Input and class partitioning
 
-The input was the unified curated repeat library generated for cross-assembly comparison. It contained 25,130 exact-sequence-deduplicated entries. The library was constructed using `unified_library/01_build_unified_library.py`, which applies 100% exact-sequence MD5 deduplication and reconciles classification metadata for duplicate sequences; no near-identity clustering was applied. When exactly one known TE fine-level classification conflicted only with Unknown, the known classification was retained; other unresolved broad-class conflicts were assigned Unknown. High-confidence classified consensus sequences were grouped into five broad TE classes (DNA, LTR, LINE, SINE and RC). The five class-specific FASTA files contained 19,132 sequences in total. The input manifest and production FASTA files are not included in the repository.
+The input was the Unified v5.2 curated repeat library constructed by combining exactly four genome-specific curated repeat libraries: BSB, TC, BT-M and BT-P. BTB-A and BTB-B were not included. The library-building workflow normalizes sequences to uppercase and removes exact sequence duplicates using MD5 hashing only; no CD-HIT or other near-identity clustering is applied. Classification metadata are reconciled for exact duplicate sequences: when exactly one known TE fine-level classification conflicts only with Unknown, the known classification is retained; other unresolved broad-class conflicts are assigned Unknown.
+
+High-confidence classified consensus sequences from this four-source unified library were grouped into five broad TE classes (DNA, LTR, LINE, SINE and RC) before within-class clustering. The production manifest, unified FASTA and class-specific FASTA files are not included in the public repository. Consequently, the number of input records, classified consensus sequences and final Pan-TE clusters should be taken from the validated four-library production outputs rather than copied from historical summaries.
 
 ## Within-class all-versus-all BLASTn
 
@@ -30,18 +32,9 @@ Each initial component was then partitioned using a representative-centered gree
 
 ## Final cluster summary
 
-| Broad class | Consensus sequences | Initial components | Refined clusters | Singleton clusters | Multi-member clusters | Maximum cluster size |
-|---|---:|---:|---:|---:|---:|---:|
-| DNA | 12,350 | 8,070 | 8,164 | 6,169 | 1,995 | 19 |
-| LTR | 5,701 | 2,822 | 2,927 | 1,830 | 1,097 | 56 |
-| LINE | 802 | 644 | 646 | 550 | 96 | 6 |
-| SINE | 61 | 34 | 34 | 21 | 13 | 6 |
-| RC | 218 | 175 | 179 | 159 | 20 | 8 |
-| **Total** | **19,132** | **11,745** | **11,950** | **8,729** | **3,221** | **56** |
+The final number of classified consensus sequences and refined Pan-TE clusters is specific to the four-library Unified v5.2 input and must be reported from the corresponding production outputs. Historical numerical summaries generated from a six-library input set are not applicable to this manuscript analysis and are not reproduced here. The public repository provides the parameterized clustering scripts but does not include the production input FASTAs or membership/QC tables needed to independently verify those counts.
 
 Pan-TE clusters are operational sequence-homology units and are not assumed to correspond directly to biologically defined TE families.
-
-**Four-sample provenance check:** the `19,132` consensus / `11,950` refined-cluster summary currently stored in this repository is traceable to a historical six-sample workflow. The current manuscript scope is BSB, TC, BT-M and BT-P only, with BTB-A and BTB-B excluded. Four-sample-specific class FASTA, BLAST, cluster-membership and QC records have not yet been located. Until those inputs are verified, the stored counts must be treated as historical and not as an independently confirmed four-sample result.
 
 ## Generated files
 
