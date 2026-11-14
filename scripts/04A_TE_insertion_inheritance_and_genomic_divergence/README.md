@@ -11,6 +11,8 @@ This module documents the RepeatMasker-based Kimura-divergence analysis of trans
 
 All four genomes were annotated for this analysis with RepeatMasker v.4.1.8 using the same unified TE library (v5.2). The analysis uses the RepeatMasker alignment output to calculate CpG-adjusted Kimura divergence and compare TE coverage distributions across divergence bins.
 
+The Unified v5.2 library used here was constructed from exactly four genome-specific curated repeat libraries (BSB, TC, BT-M and BT-P); BTB-A and BTB-B were not included. The four genome assemblies were then independently re-annotated with this common library to generate comparable RepeatMasker alignment files.
+
 This module covers **divergence-landscape comparisons**, not insertion-site presence/absence genotyping. It does not estimate population-level insertion frequencies or prove inheritance of individual TE insertion loci.
 
 ## Workflow
