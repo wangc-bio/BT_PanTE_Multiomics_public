@@ -9,24 +9,18 @@ This module documents TE identification, consensus-library curation, genome-wide
 | Manuscript section | Analysis | Documentation |
 |---|---|---|
 | 2.5 | TE identification, classification, consensus curation and genome-wide annotation | [TE identification and annotation](docs/TE_identification_and_annotation.md) |
-| 2.6 | Unified-library construction, within-class sequence-similarity search, representative-centered refinement, RepeatMasker overlap resolution and parental/F1 occupancy comparison | [Unified library](unified_library/README.md); [Pan-TE clustering](docs/PanTE_clustering.md); [Genomic occupancy](genomic_occupancy/README.md) |
+| 2.5 | Genome-specific TE annotation and construction of the four-source Unified v5.2 library | [TE identification and annotation](docs/TE_identification_and_annotation.md); [Unified library](unified_library/README.md) |
+| 2.6 | Within-class sequence-similarity search, representative-centered refinement, RepeatMasker overlap resolution and parental/F1 occupancy comparison | [Pan-TE clustering](docs/PanTE_clustering.md); [Genomic occupancy](genomic_occupancy/README.md) |
 
-Genome-specific curated repeat libraries are used for the primary RepeatMasker annotations. A unified curated repeat library is constructed for cross-assembly quantitative comparison and sensitivity analysis; it also provides the consensus sequences for Pan-TE clustering. These are distinct library uses and should not be conflated. Unified-library construction uses 100% exact-sequence MD5 deduplication; near-identity clustering (for example, CD-HIT) was not used. For exact duplicates with one known TE classification and an otherwise Unknown classification, the known classification is retained; other unresolved broad-class conflicts are assigned Unknown.
+Genome-specific curated repeat libraries are used for the primary RepeatMasker annotations. For the manuscript analysis, Unified v5.2 was constructed by combining exactly four genome-specific curated repeat libraries: BSB, TC, BT-M and BT-P. BTB-A and BTB-B were not included. The unified library provides a common consensus reference for Pan-TE clustering and the unified-library RepeatMasker annotations used in cross-assembly genomic-occupancy, Kimura-divergence and Pan-TE transcript-quantification analyses. These uses are distinct from the primary genome-specific annotations. Unified-library construction uses uppercase sequence normalization and 100% exact-sequence MD5 deduplication; near-identity clustering (for example, CD-HIT) was not used. For exact duplicates with one known TE classification and an otherwise Unknown classification, the known classification is retained; other unresolved broad-class conflicts are assigned Unknown.
 
-## Pan-TE catalogue
+## Unified v5.2 library and Pan-TE catalogue
 
-High-confidence classified consensus sequences were assigned to five broad classes (DNA, LTR, LINE, SINE and RC) and clustered within class. The currently archived summary contains 19,132 classified consensus sequences and 11,950 refined Pan-TE clusters. The four-sample Pan-TE catalogue contains 19,132 classified consensus sequences and 11,950 refined Pan-TE clusters. The unified library contains 25,540 input consensus records and 25,130 exact-sequence-unique records before broad-class filtering. BTB-A and BTB-B are not included in this manuscript analysis.
+For the manuscript analysis, Unified v5.2 was constructed from exactly four genome-specific curated repeat libraries: BSB, TC, BT-M and BT-P. BTB-A and BTB-B were not included as input libraries. The library-building script performs uppercase sequence normalization and 100% exact-sequence deduplication using MD5; it does not perform near-identity clustering. Classification reconciliation is described in the [unified-library workflow](unified_library/README.md).
 
-| Broad class | Consensus sequences | Initial components | Refined clusters | Singleton clusters | Multi-member clusters | Maximum cluster size |
-|---|---:|---:|---:|---:|---:|---:|
-| DNA | 12,350 | 8,070 | 8,164 | 6,169 | 1,995 | 19 |
-| LTR | 5,701 | 2,822 | 2,927 | 1,830 | 1,097 | 56 |
-| LINE | 802 | 644 | 646 | 550 | 96 | 6 |
-| SINE | 61 | 34 | 34 | 21 | 13 | 6 |
-| RC | 218 | 175 | 179 | 159 | 20 | 8 |
-| **Total** | **19,132** | **11,745** | **11,950** | **8,729** | **3,221** | **56** |
+The resulting unified library provides the common consensus reference for Pan-TE clustering and for the unified-library RepeatMasker annotations used in cross-assembly genomic-occupancy, Kimura-divergence and Pan-TE transcript-quantification analyses. The primary genome-specific annotations described in Methods 2.5 remain separate.
 
-Pan-TE clusters are operational sequence-homology units. They are not assumed to correspond directly to biologically defined TE families and are not genomic insertion loci.
+The production input manifest and FASTA files are not distributed in this repository. Therefore, input-record totals, unique-consensus counts, broad-class counts and refined Pan-TE cluster counts are not asserted here. These values should be reported only after checking the final four-library production FASTA, sequence map, class-specific FASTAs and cluster outputs. Historical counts from a six-library workflow must not be reused for the four-library manuscript analysis.
 
 ## Module boundary
 
@@ -41,10 +35,10 @@ Module 03 includes the refined consensus-level Pan-TE catalogue, base-level Repe
 - [Genomic occupancy scripts](genomic_occupancy/README.md) provide the generic sweep-line overlap resolver, matrix builder and parent/F1 occupancy comparison.
 - [Source-script inventory](SOURCE_SCRIPT_INVENTORY.md) records the source basis, retained parameters and provenance limitations for each workflow component.
 - [Classification synthetic test](tests/test_classification_release.py) exercises strict arbitration, operational arbitration and the two-stage rescue scripts with synthetic inputs. The test passes in GitHub Actions (run 41864679408); it validates the release code paths, not production classifications.
-- The final cluster summary is provided in [results/PanTE_refined_cluster_summary.tsv](results/PanTE_refined_cluster_summary.tsv). The minimal public-release policy for result files is described in [results/README.md](results/README.md).
+- Production Pan-TE cluster-membership and summary tables are data-dependent outputs and are not included in this public repository.
 
 The TE annotation and clustering scripts use generic input variables and do not embed assembly-specific FASTA paths. The clustering release copies retain the original thresholds and clustering logic.
 
 The initial RepBase consensus screen and subsequent RepBase/Dfam rescue searches produce hit-level evidence. The `evidence_integration/` directory includes the Dfam, RepBase and TEsorter family-summary generators, reciprocal structural-evidence processing and the evidence-master builder. The evidence-integration directory now includes the portable, manifest-driven strict arbitration (`04_final_arbitration.py`), operational arbitration (`05_operational_arbitration.py`), v5.1 RepBase rescue (`06_relaxed_repbase_rescue_v5_1.py`) and v5.2 RepBase/Dfam rescue (`07_relaxed_homology_rescue_v5_2.py`) scripts. A synthetic end-to-end test is provided in `tests/test_classification_release.py`; it tests release logic with synthetic inputs and does not reproduce production classifications. For the manuscript workflow, the production sample set is BSB, TC, BTM and BTP; the manifest-based release scripts are configured with these four inputs.
 
-**Four-sample publication scope:** all Pan-TE results reported in the manuscript are based on BSB, TC, BT-M and BT-P. BTB-A and BTB-B are excluded. The reported 19,132 classified consensus sequences and 11,950 refined clusters are the four-sample catalogue used for the manuscript analysis.
+**Four-assembly publication scope:** the manuscript-level Pan-TE analyses use BSB, TC, BT-M and BT-P only. BTB-A and BTB-B are excluded from the Unified v5.2 input, Pan-TE clustering and four-assembly comparisons. Numerical catalogue and cluster counts must be taken from the validated four-library production outputs.
