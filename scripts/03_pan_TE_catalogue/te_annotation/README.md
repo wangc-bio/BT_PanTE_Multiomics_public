@@ -68,7 +68,7 @@ After the final genome-specific curated repeat library has been prepared, run pr
 sbatch 12_repeatmasker.sh
 ```
 
-To perform the unified-library sensitivity annotation, reuse `12_repeatmasker.sh` and change only `REPEATMASKER_LIBRARY_FASTA` and `REPEATMASKER_OUT_DIR` in the external configuration.
+To perform the unified-library comparative annotation, reuse `12_repeatmasker.sh` and change only `REPEATMASKER_LIBRARY_FASTA` and `REPEATMASKER_OUT_DIR` in the external configuration. For this manuscript, the Unified v5.2 library supplied to this run is built from the four curated libraries (BSB, TC, BT-M and BT-P); it is distinct from the genome-specific library used for each primary annotation.
 
 Submit each SLURM script from this directory. `.out` and `.err` files are written beside the script. The scripts retain the analysis thread counts and software parameters, but do not prescribe cluster partitions, memory limits or wall-time limits. Software environment activation is left to the user's execution environment.
 
