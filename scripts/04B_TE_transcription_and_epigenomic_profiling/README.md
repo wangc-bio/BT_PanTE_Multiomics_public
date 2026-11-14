@@ -36,6 +36,8 @@ Script:
 
 The refined Pan-TE membership table links each unified TE consensus to a Pan-TE cluster. RepeatMasker GFF records were parsed and TE loci carrying unified v5.2 TE identifiers were assigned to their corresponding Pan-TE clusters.
 
+The unified v5.2 identifiers originate from the common library constructed using the four genome-specific curated repeat libraries (BSB, TC, BT-M and BT-P). The RepeatMasker GFF records used for this step therefore correspond to annotation with this unified library, rather than the separate genome-specific primary annotations.
+
 For TEcount-compatible GTF files:
 - `gene_id` = Pan-TE cluster ID;
 - `transcript_id` = locus-specific TE identifier;
