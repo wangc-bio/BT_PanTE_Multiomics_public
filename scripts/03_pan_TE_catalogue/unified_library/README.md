@@ -4,6 +4,8 @@
 
 This workflow merges one or more genome-specific curated repeat libraries into a nonredundant unified consensus library. The same script is used regardless of the number or identity of input libraries; actual inputs are supplied through a runtime TSV manifest and are not committed to the repository.
 
+For the manuscript analysis documented in this repository, the production manifest contains exactly four genome-specific curated repeat libraries: **BSB, TC, BT-M and BT-P**. BTB-A and BTB-B are not inputs to this Unified v5.2 library. The released script remains manifest-driven and does not hard-code these sample names; the four-input scope is the study-specific production configuration, not a restriction of the generic script.
+
 ## Method
 
 1. Read every FASTA listed in the manifest.
